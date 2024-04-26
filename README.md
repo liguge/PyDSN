@@ -49,8 +49,8 @@ Here are some ideas to get you started:
 
 4. [Interpretable Modulated Differentiable STFT and Physics-informed Balanced Spectrum Metric for Freight Train Wheelset Bearing Cross-machine Transfer Fault Diagnosis under Speed Fluctuations](https://doi.org/10.1016/j.aei.2024.102568)[![Citation Count](https://img.shields.io/badge/citations-0-blue)](https://example.com/link_to_your_paper)
 
-   - [code](https://github.com/liguge/PyDSN)
-   - [paper](https://doi.org/10.1016/j.aei.2024.102568)
+   - **[code](https://github.com/liguge/PyDSN)**
+   - **[paper](https://doi.org/10.1016/j.aei.2024.102568)**
 
 5. **[Journals of Prognostics and Health Management（智能故障诊断和寿命预测期刊）](https://github.com/liguge/Journals-for-Prognostics-and-Health-Management)**
 
