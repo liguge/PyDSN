@@ -1,4 +1,4 @@
-# Interpretable Physics-informed Domain Adaptation Paradigm for Cross-machine Transfer Diagnosis
+# Interpretable Modulated Differentiable STFT and Physics-informed Balanced Spectrum Metric for Freight Train Wheelset Bearing Cross-machine Transfer Fault Diagnosis under Speed Fluctuations
 
 The pytorch implementation of the paper [Interpretable Physics-informed Domain Adaptation Paradigm for Cross-machine Transfer Diagnosis](https://doi.org/10.1016/j.knosys.2024.111499)
 
