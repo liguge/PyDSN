@@ -1,4 +1,4 @@
-# Interpretable Modulated Differentiable STFT and Physics-informed Balanced Spectrum Metric for Freight Train Wheelset Bearing Cross-machine Transfer Fault Diagnosis under Speed Fluctuations
+# Interpretable modulated differentiable STFT and physics-informed balanced spectrum metric for freight train wheelset bearing cross-machine transfer fault diagnosis under speed fluctuations
 
 The pytorch implementation of the paper [Interpretable Physics-informed Domain Adaptation Paradigm for Cross-machine Transfer Diagnosis](https://doi.org/10.1016/j.knosys.2024.111499)
 
