@@ -1,5 +1,8 @@
 import torch
 import torch.nn as nn
+
+
+
 def entropy_loss(x):
     x1 = torch.reshape(x, (x.shape[0], -1)) # B, N 
     probs = torch.div(x1.T, x1.sum(dim=-1) + torch.finfo(x.dtype).eps).T # B, N
@@ -42,6 +45,9 @@ def intelligent_spectrogram_loss(x):
 
 # a = torch.randn(7,25,89)(q_f + q_t + q)/3
 # q_f, q_t, q = intelligent_spectrogram(a)
+
+
+
 class Intelligent_spectrogram_loss(nn.Module):
     def __init__(self, a=1):
         super(Intelligent_spectrogram_loss, self).__init__()
