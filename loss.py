@@ -1,8 +1,5 @@
 import torch
 import torch.nn as nn
-
-
-
 def entropy_loss(x):
     x1 = torch.reshape(x, (x.shape[0], -1)) # B, N 
     probs = torch.div(x1.T, x1.sum(dim=-1) + torch.finfo(x.dtype).eps).T # B, N
@@ -45,10 +42,7 @@ def intelligent_spectrogram_loss(x):
 
 # a = torch.randn(7,25,89)(q_f + q_t + q)/3
 # q_f, q_t, q = intelligent_spectrogram(a)
-
-
-
-class Intelligent_spectrogram_loss(nn.Module):
+class Intelligent_spectrogram_loss_1(nn.Module):
     def __init__(self, a=1):
         super(Intelligent_spectrogram_loss, self).__init__()
         self.a = a
@@ -60,7 +54,7 @@ class Intelligent_spectrogram_loss(nn.Module):
         c_k = x.mean(dim=-1) / (x.std(dim=-1) + torch.finfo(x.dtype).eps)
         q_f = (c_m / (c_m.max() + torch.finfo(x.dtype).eps)).mean()
         q_t = (c_k / (c_k.max() + torch.finfo(x.dtype).eps)).mean()
-        # q_ft = q_f * q_t
+        q_ft = q_f * q_t
         # return torch.exp(0.5*(q_f ** 2 + q_t ** 2))-1
         # return torch.exp((q_f + q_t + torch.abs(q_f-q_t))/3.0) - 1
         # return torch.exp(
@@ -68,9 +62,19 @@ class Intelligent_spectrogram_loss(nn.Module):
         # return (q_f + q_t)/2.0
         # return (q_f + q_t + q_ft + torch.abs(q_f - q_t) + torch.abs(q_f - q_ft) + torch.abs(q_t - q_ft)) / 6.0
         # return (1 + self.a**2) * (q_f * q_t) / (self.a**2 * q_f + q_t)   ### right
-        # return 1/q_ft
+        return 1/q_ft
         # return 3 * q_f * q_t * q_ft / (q_f * q_t + q_t * q_ft + q_ft * q_f)
-        return 2 * q_f * q_t / (q_f + q_t)
+
+class Intelligent_spectrogram_loss(nn.Module):
+    def __init__(self):
+        super(Intelligent_spectrogram_loss, self).__init__()
+    def forward(self, x):
+        x = x.abs()
+        c_m = x.mean(dim=-2) / (x.std(dim=-2) + torch.finfo(x.dtype).eps)
+        c_k = x.mean(dim=-1) / (x.std(dim=-1) + torch.finfo(x.dtype).eps)
+        q_f = (c_m / (c_m.max() + torch.finfo(x.dtype).eps)).mean()
+        q_t = (c_k / (c_k.max() + torch.finfo(x.dtype).eps)).mean()
+        return 2.0 * q_f * q_t / (q_f + q_t)
 
 
 class Calculate_renyi_entropy(nn.Module):
