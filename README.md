@@ -62,3 +62,4 @@ The authors are grateful for the supports of the National Natural Science Founda
 - **chaohe#bjtu.edu.cn (please replace # by @)**
 
 ​      
+[![Hits](https://hits.sh/github.com/github.com/liguge/PyDSN.svg?label=Views&color=0891b2)](https://hits.sh/github.com/liguge/PyDSN/)
